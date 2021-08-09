@@ -12,11 +12,11 @@ export const login = (data) => async (dispatch) => {
 export const signup = (data) => async (dispatch) => {
   const { setUser } = actions;
 
-  const response = (await signupRequest(data)) || null;
-  if (!response.error) {
-    return dispatch(setUser(response.user));
+  const res = (await signupRequest(data)) || null;
+  if (res.token) {
+    return dispatch(setUser(res));
   }
-  return response;
+  return res;
 }
 
 export const getUserByToken = () => async (dispatch) => {

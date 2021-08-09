@@ -25,7 +25,7 @@ const addUserAction = async (req, res) => {
 		if (user) {
 			return res.status(400).json({
 				error: true,
-				message: `The user with the name ${name} already exists`,
+				message: `The user with the username ${username} already exists`,
 			});
 		}
 
